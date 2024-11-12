@@ -1,0 +1,7 @@
+{
+  "name": "swave-ng",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
