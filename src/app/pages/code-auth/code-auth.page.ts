@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-code-auth',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CodeAuthPage implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
+  returnToPrevious() {
+    this.location.back();
+  }
+  
   ngOnInit() {
+  }
+
+  otp: string = '';
+
+  verifyOtp() {
+    // Combine OTP input values and validate
+    console.log('OTP Entered:', this.otp);
+  }
+
+  resendOtp() {
+    // Logic to resend OTP
+    console.log('Resend OTP');
   }
 
 }

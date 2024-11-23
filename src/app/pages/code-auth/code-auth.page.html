@@ -1,13 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>code-auth</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">code-auth</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <body>
+    
+    <div class="back">
+      <ion-button fill="clear" shape="round" (click)="returnToPrevious()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
+      </ion-button>
+    </div>
+
+    <div class="otp-container">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Enter OTP</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>We have sent a One-Time Password to your registered mobile number.</p>
+          <p>Please enter the 6-digit code below:</p>
+          <!-- OTP Input Fields -->
+          <div class="otp-inputs">
+            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
+            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
+            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
+            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
+            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
+            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
+          </div>
+          <ion-button expand="block" color="success" (click)="verifyOtp()">Verify OTP</ion-button>
+          <ion-button fill="clear" color="medium" (click)="resendOtp()">Resend OTP</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+  </body>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="small" class="footer-text">
+      Didn't receive the OTP? Tap Resend to try again.
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
