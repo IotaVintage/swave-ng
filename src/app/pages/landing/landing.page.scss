@@ -1,0 +1,70 @@
+
+$mula: #025e00;     //Nasaririt Green
+$dalluyon: #00195b; //Nasaririt Blue
+$balitok: #ffdc18;  //Nasaririt Gold
+$uging: black;      //Nasaririt Black
+$aniniwan: #373737; //Nasaririt Shadow
+$asok: #acacac;     //Nasaririt Light Gray
+$dapo: #6a6a6a;     //Nasaririt Dark Gray
+$pudaw: white;      //Nasaririt White
+
+* {
+  font-family: Damili;
+}
+
+img {
+  width: 210pt;
+  height: 210pt;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80pt;
+}
+
+h1 {
+  text-align: center;
+}
+
+#name {
+  margin-top: -5px;
+  font-size: 45px;
+  color: $aniniwan;
+  font-family: Damili-SemiBold;
+}
+
+#tag {
+  color: #a5a5a5;
+  font-size: 15px;
+  margin-top: -10pt;
+  margin-left: 75pt;
+}
+#frenzy {
+  font-family: Damili-SemiBold;
+}
+
+ion-icon {
+  color: #373737;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+
+ion-button {
+  color: $aniniwan;
+  margin-top: 150pt;
+
+  img {
+    margin-left: 5px;
+    margin-right: -5pt;
+    margin-top: 1px;
+  }
+}
+
+#creator {
+  margin-top: 60pt;
+  font-size: 9px;
+  color: #a5a5a5;
+}
+

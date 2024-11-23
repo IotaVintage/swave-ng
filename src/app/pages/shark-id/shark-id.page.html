@@ -1,0 +1,46 @@
+
+<ion-content [fullscreen]="true">
+  <body>
+    <img src="assets/swave-007-logos/72ppi/colored.png" alt="colored-logo">
+      <!-- <div id="floating-input">
+        <div class="container">
+          <ion-input class="custom" name="sharkid" label="SharkID" label-placement="floating" fill="outline" />
+        </div>
+      </div> -->
+
+      <div class="floating-sharkid">
+        <input type="text"  required>
+        <label for="">SharkID</label>
+      </div>
+
+      <div class="container">
+        <div class="name">SharkID</div>
+        <div class="description">is your UNP Identification Number.</div>
+        <div class="information">To proceed, find yours by typing <br> your <strong>SharkID</strong> in the input box.</div>
+        <div class="three">
+          <ion-button routerLink="/code-auth">      <!--NEXT BUTTON PRESSESD,-->
+            Next                                    <!--IF ID VALID && ID IN DB,-->
+          </ion-button>                             <!--THEN REDIRECT TO CODE-AUTH-->
+        </div>
+        <div class="back">
+          <ion-button fill="clear" shape="round" (click)="returnToPrevious()">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+            <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
+          </ion-button>
+        </div>
+        <div class="two">
+          <div class="creator">
+            <p>sharkwave by <span id="frenzy">DeltaTEK</span> | 2024 </p>
+          </div>
+        </div>
+        <div class="one">
+          <div class="background">
+           <ion-img src="/assets/design-element.svg" alt="design-element"/>
+          </div>
+        </div>
+      </div>
+
+
+  </body>
+</ion-content>
+

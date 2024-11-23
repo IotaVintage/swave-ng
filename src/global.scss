@@ -34,4 +34,62 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import "@ionic/angular/css/palettes/dark.system.css";
+// @import "@ionic/angular/css/palettes/dark.system.css";
+
+/*TYPEFACES*/
+@font-face {
+  font-family: 'Damili-Regular';
+  src: url('assets/damili-fonts/Figtree-Regular.woff2') format('woff2'),
+       url('assets/damili-fonts/Figtree-Regular.woff') format('woff'),
+       url('assets/damili-fonts/Figtree-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Damili-ExtraBold';
+  src: url('assets/damili-fonts/Figtree-ExtraBold.woff2') format('woff2'),
+       url('assets/damili-fonts/Figtree-ExtraBold.woff') format('woff'),
+       url('assets/damili-fonts/Figtree-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Damili-SemiBold';
+  src: url('assets/damili-fonts/Figtree-SemiBold.woff2') format('woff2'),
+       url('assets/damili-fonts/Figtree-SemiBold.woff') format('woff'),
+       url('assets/damili-fonts/Figtree-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Damili-Medium';
+  src: url('assets/damili-fonts/Figtree-Medium.woff2') format('woff2'),
+       url('assets/damili-fonts/Figtree-Medium.woff') format('woff'),
+       url('assets/damili-fonts/Figtree-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Damili-Light';
+  src: url('assets/damili-fonts/Figtree-Light.woff2') format('woff2'),
+       url('assets/damili-fonts/Figtree-Light.woff') format('woff'),
+       url('assets/damili-fonts/Figtree-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Damili-Bold';
+  src: url('assets/damili-fonts/Figtree-Bold.woff2') format('woff2'),
+       url('assets/damili-fonts/Figtree-Bold.woff') format('woff'),
+       url('assets/damili-fonts/Figtree-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Damili';
+  src: url('assets/damili-fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Damili-Italic';
+  src: url('assets/damili-fonts/Figtree-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+
+/*COLORS*/
+
+
