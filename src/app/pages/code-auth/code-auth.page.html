@@ -18,12 +18,12 @@
           <p>Please enter the 6-digit code below:</p>
           <!-- OTP Input Fields -->
           <div class="otp-inputs">
-            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
-            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
-            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
-            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
-            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
-            <ion-input type="text" maxlength="1" inputmode="numeric"></ion-input>
+            <ion-input #otp1 type="text" maxlength="1" inputmode="numeric" (input)="moveToNext($event, otp2)"></ion-input>
+            <ion-input #otp2 type="text" maxlength="1" inputmode="numeric" (input)="moveToNext($event, otp3)"></ion-input>
+            <ion-input #otp3 type="text" maxlength="1" inputmode="numeric" (input)="moveToNext($event, otp4)"></ion-input>
+            <ion-input #otp4 type="text" maxlength="1" inputmode="numeric" (input)="moveToNext($event, otp5)"></ion-input>
+            <ion-input #otp5 type="text" maxlength="1" inputmode="numeric" (input)="moveToNext($event, otp6)"></ion-input>
+            <ion-input #otp6 type="text" maxlength="1" inputmode="numeric"></ion-input>
           </div>
           <ion-button expand="block" color="success" (click)="verifyOtp()">Verify OTP</ion-button>
           <ion-button fill="clear" color="medium" (click)="resendOtp()">Resend OTP</ion-button>

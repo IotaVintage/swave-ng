@@ -17,8 +17,16 @@ export class CodeAuthPage implements OnInit {
   ngOnInit() {
   }
 
-  otp: string = '';
+  otp: string[] = ['', '', '', '', '', ''];
 
+  // Function to move to the next input field
+  moveToNext(event: any, nextInput: any): void {
+    const value = event.target.value;
+    if (value.length === 1 && nextInput) {
+      nextInput.setFocus();
+    }
+  }
+  
   verifyOtp() {
     // Combine OTP input values and validate
     console.log('OTP Entered:', this.otp);
