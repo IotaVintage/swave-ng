@@ -8,9 +8,15 @@
         </div>
       </div> -->
 
+      <div class="back">
+        <ion-button fill="clear" shape="round" (click)="returnToPrevious()">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
+        </ion-button>
+      </div>
       <div class="floating-sharkid">
         <input type="text"  required>
-        <label for="">SharkID</label>
+        <label>SharkID</label>
       </div>
 
       <div class="container">
@@ -22,12 +28,7 @@
             Next                                    <!--IF ID VALID && ID IN DB,-->
           </ion-button>                             <!--THEN REDIRECT TO CODE-AUTH-->
         </div>
-        <div class="back">
-          <ion-button fill="clear" shape="round" (click)="returnToPrevious()">
-            <ion-icon name="arrow-back-outline"></ion-icon>
-            <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
-          </ion-button>
-        </div>
+
         <div class="two">
           <div class="creator">
             <p>sharkwave by <span id="frenzy">DeltaTEK</span> | 2024 </p>

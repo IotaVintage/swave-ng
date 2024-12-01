@@ -7,12 +7,25 @@ $asok: #acacac;     //Nasaririt Light Gray
 $dapo: #6a6a6a;     //Nasaririt Dark Gray
 $pudaw: white;      //Nasaririt White
 
+body {
+  position:relative;
+}
+
 .otp-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
+    z-index: 2;
+
+}
+
+ion-card {
+  box-shadow: #373737;
+  background-color: $pudaw;
+  border-radius: 7pt;
 }
 
 .otp-inputs {
@@ -25,15 +38,43 @@ ion-input {
     width: 50px;
     height: 50px;
     text-align: center;
+    font-family: Damili-Regular;
     font-size: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid $asok;
     border-radius: 8px;
 }
 
+ion-card-title {
+  font-size: 35px;
+  font-family: Damili-SemiBold;
+}
+
+p {
+  font-family: Damili-Regular;
+}
+
+ion-button {
+  font-family: Damili-Light;
+}
+
+#verify {
+  --background: #025e00;
+  --border-radius: 7px;
+  --box-shadow: none;
+  --background-activated: #ffffff;
+  --color-activated:$dalluyon;
+  --ripple-color: $dalluyon 0.25;
+}
+
+#resend {
+  display: flex;
+  justify-content: center;
+}
+
 .back {
-    margin-top: 10%;
     position: absolute;
-    z-index: 4;
+    margin-top: 9%;
+    z-index: 3;
 }
 
 .back ion-button {
@@ -45,4 +86,40 @@ ion-input {
 .back ion-icon {
     font-size: 15pt;
     color: $uging;
+}
+
+.footer-text {
+  font-family: Damili-Light;
+}
+
+ion-title {
+  color: $aniniwan;
+}
+
+.gear {
+  position: absolute;
+  // display: block;
+  // margin-left: auto;
+  // margin-right: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.gear ion-img {
+  margin-top: -200pt;
+  height: 320pt;
+  width: 320pt;
+  animation: rotate 70s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

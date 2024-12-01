@@ -1,13 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>account-preview</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">account-preview</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <body>
+    <img src="assets/swave-007-logos/72ppi/colored.png" alt="colored-logo">
+
+    <div class="back">
+      <ion-button fill="clear" shape="round" (click)="returnToPrevious()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+        <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
+      </ion-button>
+    </div>
+      <div class="container">
+        <div class="user">
+          <h5>Hello,</h5>
+          <h1>John Dave!</h1>
+        </div>
+        <div class="name">Account Setup</div>
+        <div class="description">Finish setting up your account.</div>
+        <div class="information">Fill out the necessary boxes <br> to proceed.</div>
+        <div class="three">
+          <ion-button routerLink="/account-setup">      <!--NEXT BUTTON PRESSESD,-->
+            Next                                    <!--IF ID VALID && ID IN DB,-->
+          </ion-button>                             <!--THEN REDIRECT TO ACCOUNT-SETUP-->
+        </div>
+
+        <div class="two">
+          <div class="creator">
+            <p>sharkwave by <span id="frenzy">DeltaTEK</span> | 2024 </p>
+          </div>
+        </div>
+        <div class="one">
+          <div class="background">
+           <ion-img src="/assets/design-element.svg" alt="design-element"/>
+          </div>
+        </div>
+      </div>
+  </body>
 </ion-content>

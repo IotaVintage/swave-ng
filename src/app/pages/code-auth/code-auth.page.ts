@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-code-auth',
   templateUrl: './code-auth.page.html',
   styleUrls: ['./code-auth.page.scss'],
 })
-export class CodeAuthPage implements OnInit {
+export class CodeAuthPage  {
+  router: any;
 
   constructor(private location: Location) { }
 
   returnToPrevious() {
     this.location.back();
   }
-  
-  ngOnInit() {
-  }
+
 
   otp: string[] = ['', '', '', '', '', ''];
 
@@ -26,10 +27,11 @@ export class CodeAuthPage implements OnInit {
       nextInput.setFocus();
     }
   }
-  
+
   verifyOtp() {
     // Combine OTP input values and validate
-    console.log('OTP Entered:', this.otp);
+
+    // console.log('OTP Entered:', this.otp);
   }
 
   resendOtp() {

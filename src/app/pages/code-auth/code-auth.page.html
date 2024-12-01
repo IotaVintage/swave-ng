@@ -1,10 +1,8 @@
 <ion-content [fullscreen]="true">
   <body>
-    
     <div class="back">
       <ion-button fill="clear" shape="round" (click)="returnToPrevious()">
         <ion-icon name="arrow-back-outline"></ion-icon>
-        <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
       </ion-button>
     </div>
 
@@ -14,7 +12,7 @@
           <ion-card-title>Enter OTP</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <p>We have sent a One-Time Password to your registered mobile number.</p>
+          <p>We have sent a One-Time Pin (OTP) to your registered UNP ID.</p>
           <p>Please enter the 6-digit code below:</p>
           <!-- OTP Input Fields -->
           <div class="otp-inputs">
@@ -25,19 +23,24 @@
             <ion-input #otp5 type="text" maxlength="1" inputmode="numeric" (input)="moveToNext($event, otp6)"></ion-input>
             <ion-input #otp6 type="text" maxlength="1" inputmode="numeric"></ion-input>
           </div>
-          <ion-button expand="block" color="success" (click)="verifyOtp()">Verify OTP</ion-button>
-          <ion-button fill="clear" color="medium" (click)="resendOtp()">Resend OTP</ion-button>
+          <ion-button id="verify" expand="block" (click)="verifyOtp()" routerLink="/account-preview">Verify</ion-button>
+          <ion-button id="resend" fill="clear" color="medium" (click)="resendOtp()">Resend Code</ion-button>
         </ion-card-content>
       </ion-card>
     </div>
-
+    <div class="gear">
+      <ion-img src="assets/SVG/blue-gear.svg"></ion-img>
+    </div>
+    <div class="gear">
+      <ion-img src="assets/SVG/gold-gear.svg"></ion-img>
+    </div>
   </body>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
+  <ion-item>
     <ion-title size="small" class="footer-text">
       Didn't receive the OTP? Tap Resend to try again.
-    </ion-title>
-  </ion-toolbar>
+   </ion-title>
+  </ion-item>
 </ion-footer>
