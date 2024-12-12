@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import { IonItemOption } from '@ionic/angular';
 import { AccountSetupPageRoutingModule } from './account-setup-routing.module';
 
 import { AccountSetupPage } from './account-setup.page';

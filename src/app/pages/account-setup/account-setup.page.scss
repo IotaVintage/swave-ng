@@ -1,0 +1,70 @@
+$mula: #025e00;     //Nasaririt Green
+$dalluyon: #00195b; //Nasaririt Blue
+$balitok: #ffdc18;  //Nasaririt Gold
+$uging: black;      //Nasaririt Black
+$aniniwan: #373737; //Nasaririt Shadow
+$asok: #acacac;     //Nasaririt Light Gray
+$dapo: #6a6a6a;     //Nasaririt Dark Gray
+$pudaw: white;      //Nasaririt White
+
+* {
+  font-family: Damili-Regular;
+}
+
+.input-box {
+  margin: 20px 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 4;
+}
+.input-box label {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 93pt;
+  color: $aniniwan;
+  font-size: 13px;
+  font-family: Damili-Light;
+  pointer-events: none;
+  background-color: white;
+  padding: 0 3px;
+  transition: 0.2s;
+}
+
+.input-box input {
+  width: 135pt;
+  height: 30pt;
+  font-size: 16px;
+  font-family: Damili-Regular;
+  padding: 0 15px;
+  border: 1pt solid $dalluyon;
+  background: transparent;
+  outline: none;
+  border-radius: 7px;
+}
+
+.input-box input:focus~label, .input-box input:valid~label {
+  top: 0;
+  color: $dalluyon;
+  font-size: 14px;
+}
+
+.next{
+  ion-button {
+    width: 22%;
+    font-family: Damili-Light;
+    //margin-top: 240pt;
+    margin-left: 200pt;
+    --background: #00195B;
+    --border-radius: 7px;
+    --box-shadow: none;
+    --background-activated: #ffffff;
+    --color-activated:$dalluyon;
+    --ripple-color: $dalluyon 0.25;
+    position:absolute;
+    z-index: 4;
+  }
+}

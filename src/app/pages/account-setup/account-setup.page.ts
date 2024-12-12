@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-account-setup',
   templateUrl: './account-setup.page.html',
   styleUrls: ['./account-setup.page.scss'],
 })
-export class AccountSetupPage implements OnInit {
+export class AccountSetupPage  {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
-  ngOnInit() {
+  returnToPrevious() {
+    this.location.back();
   }
 
 }

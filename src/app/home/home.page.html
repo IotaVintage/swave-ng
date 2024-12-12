@@ -1,20 +1,45 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-buttons slot="start">
+      <ion-tab-button routerLink="/home/profile">
+        <ion-icon name="person" style="font-size: 20px;"></ion-icon>
+      </ion-tab-button>
+    </ion-buttons>
+    <ion-title class="sharkwave">
+      <h2 style="font-family: 'Damili-Regular'; margin-top: 10px;">sharkwave</h2>
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-tab-button routerLink="/home/search">
+        <ion-icon name="search" style="font-size: 20px;"></ion-icon>
+      </ion-tab-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-router-outlet></ion-router-outlet>
 </ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="highlights" routerLink="/home/highlights">
+      <ion-icon name="diamond-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="sail" routerLink="/home/sail">
+      <ion-icon name="boat-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="shark" routerLink="/home/shark">
+      <ion-img src="/assets/swaveLogo.png" alt="swave-logo" style="height: 37px;"></ion-img>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notifications" routerLink="/home/notifications">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings" routerLink="/home/settings">
+      <ion-icon name="settings-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

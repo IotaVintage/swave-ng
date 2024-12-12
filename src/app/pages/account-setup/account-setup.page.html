@@ -1,13 +1,132 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>account-setup</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">account-setup</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="back">
+    <ion-button fill="clear" shape="round" (click)="returnToPrevious()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
+    </ion-button>
+  </div>
+  <form action="">
+
+    <div class="credentials">
+      <h3>CREDENTIALS</h3>
+      <div class="input-box">
+        <input type="text"  required>
+        <label>SharkID</label>
+      </div>
+
+      <div class="input-box">
+        <input type="password" required>
+        <label>Password</label>
+      </div>
+
+      <div class="input-box">
+        <input type="text"  required>
+        <label>UNP E-mail</label>
+      </div>
+    </div>
+
+    <div class="personal">
+      <h3>PERSONAL INFORMATION</h3>
+      <h6>Name</h6>
+
+      <div class="name">
+        <div class="input-box">
+          <input type="text"  required>
+          <label>First Name</label>
+        </div>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label>Middle Name</label>
+        </div>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label>Last Name</label>
+        </div>
+      </div>
+
+      <h6>Address</h6>
+      <div class="address">
+        <div class="input-box">
+          <input type="text"  required>
+          <label>Barangay</label>
+        </div>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label>City/Town</label>
+        </div>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label>Province</label>
+        </div>
+      </div>
+
+      <h6>Others</h6>
+      <div class="address">
+        <div class="input-box">
+          <input type="text"  required>
+          <label>Contact Number</label>
+        </div>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label>Birthday</label>
+        </div>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label>Province</label>
+        </div>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label for="sex">Sex</label>
+          <select name="sex" id="sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="acad-info">
+        <h3>ACADEMIC INFORMATION</h3>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label for="college">College</label>
+          <select name="college" id="sex">
+            <option value="College 1">College 1</option>
+            <option value="College 2">College 2</option>
+            <option value="College 3">College 3</option>
+            <option value="College 4">College 4</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label for="program">Program</label>
+          <select name="progrm" id="program">
+            <option value="Program 1">Program 1</option>
+            <option value="Program 2">Program 2</option>
+            <option value="Program 3">Program 3</option>
+            <option value="Program 4">Program 4</option>
+          </select>
+        </div>
+
+        <div class="input-box">
+          <input type="text"  required>
+          <label for="sectiom">Section</label>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="next">
+    <ion-button routerLink="/interests">
+      Next
+    </ion-button>                             
+  </div>
 </ion-content>
