@@ -2,11 +2,14 @@
   <div class="back">
     <ion-button fill="clear" shape="round" (click)="returnToPrevious()">
       <ion-icon name="arrow-back-outline"></ion-icon>
-      <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
     </ion-button>
   </div>
-  <form action="">
 
+  <div class="logo">
+    <ion-img src="assets/swave-007-logos/72ppi/colored.png"></ion-img>
+  </div>
+  <p>Setting up your <br> account...</p>
+  <form action="">
     <div class="credentials">
       <h3>CREDENTIALS</h3>
       <div class="input-box">
@@ -76,21 +79,15 @@
           <label>Birthday</label>
         </div>
 
-        <div class="input-box">
-          <input type="text"  required>
-          <label>Province</label>
+        <div class="input-box" id="age">
+          <input type="floating" type="number"  required>
+          <label>Age</label>
         </div>
 
-        <div class="input-box">
-          <!-- <input type="text"  required>
-          <label for="sex">Sex</label>
-          <select name="sex" id="sex">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select> -->
-          <ion-item class="sex-item">
+        <div class="input-box" id="sex">
+          <ion-item>
             <ion-label>Sex</ion-label>
-            <ion-select interface="popover" placeholder="Select an option">
+            <ion-select interface="popover">
               <ion-select-option value="Male">Male</ion-select-option>
               <ion-select-option value="Female">Female</ion-select-option>
             </ion-select>
@@ -101,28 +98,26 @@
       <div class="acad-info">
         <h3>ACADEMIC INFORMATION</h3>
 
-        <div class="input-box">
-          <input type="text"  required>
-          <label for="college">College</label>
-          <select name="college" id="sex">
-            <option value="College 1">College 1</option>
-            <option value="College 2">College 2</option>
-            <option value="College 3">College 3</option>
-            <option value="College 4">College 4</option>
-          </select>
-        </div>
+        <div class="college-program">
+          <ion-item [class.is-invalid]="collegeCtrl.invalid && collegeCtrl.touched" lines="none" style="margin-bottom: 20px">
+            <ion-label position="floating-input">College</ion-label>
+            <ion-select [(ngModel)]="college" name="college" required (ionChange)="updateCourses()" #collegeCtrl="ngModel" interface="popover">
+              <ion-select-option *ngFor="let college of colleges" [value]="college.value">{{ college.name }}</ion-select-option>
+            </ion-select>
+            <ion-icon name="warning" slot="end" *ngIf="collegeCtrl.invalid && collegeCtrl.touched" color="danger"></ion-icon>
+          </ion-item>
+          <!-- <ion-text color="danger" *ngIf="collegeCtrl.invalid && collegeCtrl.touched">College is required</ion-text> -->
 
-        <div class="input-box">
-          <input type="text"  required>
-          <label for="program">Program</label>
-          <select name="progrm" id="program">
-            <option value="Program 1">Program 1</option>
-            <option value="Program 2">Program 2</option>
-            <option value="Program 3">Program 3</option>
-            <option value="Program 4">Program 4</option>
-          </select>
-        </div>
+          <ion-item [class.is-invalid]="courseCtrl.invalid && courseCtrl.touched" lines="none">
+            <ion-label>Program</ion-label>
+            <ion-select [(ngModel)]="course" name="course" required #courseCtrl="ngModel" interface="popover">
+              <ion-select-option *ngFor="let course of currentCourses" [value]="course">{{ course }}</ion-select-option>
+            </ion-select>
+            <ion-icon name="warning" slot="end" *ngIf="courseCtrl.invalid && courseCtrl.touched" color="danger"></ion-icon>
+          </ion-item>
+          <!-- <ion-text color="danger" *ngIf="courseCtrl.invalid && courseCtrl.touched">Course is required</ion-text> -->
 
+        </div>
         <div class="input-box">
           <input type="text"  required>
           <label for="sectiom">Section</label>

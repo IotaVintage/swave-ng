@@ -11,6 +11,47 @@ $pudaw: white;      //Nasaririt White
   font-family: Damili-Regular;
 }
 
+p {
+  margin-top: -10px;
+  font-size: 25pt;
+  font-family: Damili-Bold;
+}
+.back {
+  position: absolute;
+  margin-top: 9%;
+  z-index: 3;
+}
+
+.back ion-button {
+  margin-left: 7px;
+  --padding-start: 7pt;
+  --padding-end: 7pt;
+
+}
+
+.back ion-icon {
+  font-size: 15pt;
+  color: $uging;
+}
+
+//LOGO
+.logo ion-img {
+  margin-left: 20px;
+  margin-top: 50pt;
+  width: 100px;
+  height: 100px;
+}
+
+h3, p {
+  margin-left:20px;
+  z-index: 4;
+}
+
+h6 {
+  margin-left: 30px;
+  z-index: 4;
+}
+
 .input-box {
   margin: 20px 0;
   position: relative;
@@ -24,7 +65,7 @@ $pudaw: white;      //Nasaririt White
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
-  left: 93pt;
+  left: 40pt;
   color: $aniniwan;
   font-size: 13px;
   font-family: Damili-Light;
@@ -35,8 +76,8 @@ $pudaw: white;      //Nasaririt White
 }
 
 .input-box input {
-  width: 135pt;
-  height: 30pt;
+  width: 80%;
+  height: 35pt;
   font-size: 16px;
   font-family: Damili-Regular;
   padding: 0 15px;
@@ -44,7 +85,12 @@ $pudaw: white;      //Nasaririt White
   background: transparent;
   outline: none;
   border-radius: 7px;
+
 }
+
+// .input-box #age {
+//   width: 39%;
+// }
 
 .input-box input:focus~label, .input-box input:valid~label {
   top: 0;
@@ -52,12 +98,15 @@ $pudaw: white;      //Nasaririt White
   font-size: 14px;
 }
 
+
+
 .next{
   ion-button {
     width: 22%;
     font-family: Damili-Light;
     //margin-top: 240pt;
     margin-left: 200pt;
+    padding-bottom: 30pt;
     --background: #00195B;
     --border-radius: 7px;
     --box-shadow: none;
@@ -69,12 +118,36 @@ $pudaw: white;      //Nasaririt White
   }
 }
 
-
-//MEH
-.sex-item {
-  border:
-  ion-label {
-
-  }
-  width: 180;
+.college-program {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+
+ion-item {
+  border: 1px solid #00195B;
+  border-radius: 7px;
+  width: 80%;
+  height: 35pt;
+  --min-height: 0;
+  z-index: 4;
+  ion-label {
+    top: 50%;
+    left: 93pt;
+    color: $aniniwan;
+    font-size: 13px;
+    font-family: Damili-Light;
+    pointer-events: none;
+    background-color: white;
+    transition: 0.2s;
+  }
+
+  ion-select-option {
+    font-family: Damili-Light;
+  }
+}
+
+
