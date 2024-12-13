@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./account-setup.page.scss'],
 })
 export class AccountSetupPage  {
+sex: any;
 
   constructor(private location: Location) { }
 

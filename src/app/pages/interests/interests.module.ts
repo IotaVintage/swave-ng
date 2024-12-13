@@ -7,14 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { InterestsPageRoutingModule } from './interests-routing.module';
 
 import { InterestsPage } from './interests.page';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InterestsPageRoutingModule
-  ],
-  declarations: [InterestsPage]
+    InterestsPageRoutingModule,
+],
+  declarations: [InterestsPage],
 })
 export class InterestsPageModule {}

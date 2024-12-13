@@ -7,7 +7,6 @@ import { IonItemOption } from '@ionic/angular';
 import { AccountSetupPageRoutingModule } from './account-setup-routing.module';
 
 import { AccountSetupPage } from './account-setup.page';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +14,6 @@ import { AccountSetupPage } from './account-setup.page';
     IonicModule,
     AccountSetupPageRoutingModule
   ],
-  declarations: [AccountSetupPage]
+  declarations: [AccountSetupPage, ]
 })
 export class AccountSetupPageModule {}

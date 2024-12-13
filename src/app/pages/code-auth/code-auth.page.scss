@@ -69,6 +69,7 @@ ion-button {
 #resend {
   display: flex;
   justify-content: center;
+  --ripple-color: transparent;
 }
 
 .back {
@@ -81,6 +82,7 @@ ion-button {
     margin-left: 7px;
     --padding-start: 7pt;
     --padding-end: 7pt;
+
 }
 
 .back ion-icon {

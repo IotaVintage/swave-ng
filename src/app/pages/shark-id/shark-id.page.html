@@ -14,20 +14,24 @@
           <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
         </ion-button>
       </div>
-      <div class="floating-sharkid">
-        <input type="text"  required>
-        <label>SharkID</label>
-      </div>
+      <form action="">
+        <div class="floating-sharkid">
+          <input type="text"  required>
+          <label>SharkID</label>
+        </div>
 
-      <div class="container">
-        <div class="name">SharkID</div>
-        <div class="description">is your UNP Identification Number.</div>
-        <div class="information">To proceed, find yours by typing <br> your <strong>SharkID</strong> in the input box.</div>
         <div class="three">
           <ion-button routerLink="/code-auth">      <!--NEXT BUTTON PRESSESD,-->
             Next                                    <!--IF ID VALID && ID IN DB,-->
           </ion-button>                             <!--THEN REDIRECT TO CODE-AUTH-->
         </div>
+      </form>
+
+      <div class="container">
+        <div class="name">SharkID</div>
+        <div class="description">is your UNP Identification Number.</div>
+        <div class="information">To proceed, find yours by typing <br> your <strong>SharkID</strong> in the input box.</div>
+
 
         <div class="two">
           <div class="creator">

@@ -1,13 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>interests</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">interests</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="back">
+    <ion-button fill="clear" shape="round" (click)="returnToPrevious()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      <!-- <ion-img src="/assets/icon/arrow-left-c.png" alt="back-button"/> -->
+    </ion-button>
+  </div>
+
+  <div class="placeholder">Logo or Picture</div>
+
+  <h4>Hello,</h4>
+  <h1>John Dave</h1>
+
+  <h1><b>Choose your Interests</b></h1>
+  <h6>Choose which you have interest in <br> to give you the best app experience</h6>
+
+  <form action="">
+    <div class="interests-list">
+      <h3><b>Interests</b></h3>
+      <div *ngIf="selectedInterests.length > 0">
+        <p>{{ selectedInterests.join(', ') }}</p>
+      </div>
+
+      <ion-button
+        *ngFor="let button of interests; let i = index"
+        [fill]="button.isFilled ? 'solid' : 'clear'"
+        (click)="toggleFill(i)"
+        color="primary"
+        class="interests">
+        {{ button.label }}
+      </ion-button>
+    </div>
+
+
+    <div class="next">
+      <ion-button routerLink="/home">
+        Submit
+      </ion-button>
+    </div>
+  </form>
 </ion-content>
+

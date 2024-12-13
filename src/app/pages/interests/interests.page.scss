@@ -1,0 +1,23 @@
+$mula: #025e00;     //Nasaririt Green
+$dalluyon: #00195b; //Nasaririt Blue
+$balitok: #ffdc18;  //Nasaririt Gold
+$uging: black;      //Nasaririt Black
+$aniniwan: #373737; //Nasaririt Shadow
+$asok: #acacac;     //Nasaririt Light Gray
+$dapo: #6a6a6a;     //Nasaririt Dark Gray
+$pudaw: white;      //Nasaririt White
+
+* {
+  font-family: Damili-Regular;
+}
+.interests-list ion-button {
+  --border-color: 1px solid #00195b;
+  --border-radius: 7px;
+  --color: #00195b;
+  --ripple-color: #00195b;
+  --background: white;
+
+}
+
+
+

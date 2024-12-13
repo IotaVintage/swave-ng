@@ -82,12 +82,19 @@
         </div>
 
         <div class="input-box">
-          <input type="text"  required>
+          <!-- <input type="text"  required>
           <label for="sex">Sex</label>
           <select name="sex" id="sex">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-          </select>
+          </select> -->
+          <ion-item class="sex-item">
+            <ion-label>Sex</ion-label>
+            <ion-select interface="popover" placeholder="Select an option">
+              <ion-select-option value="Male">Male</ion-select-option>
+              <ion-select-option value="Female">Female</ion-select-option>
+            </ion-select>
+          </ion-item>
         </div>
       </div>
 
@@ -127,6 +134,6 @@
   <div class="next">
     <ion-button routerLink="/interests">
       Next
-    </ion-button>                             
+    </ion-button>
   </div>
 </ion-content>
