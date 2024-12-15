@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
@@ -8,11 +8,12 @@ import { ToastController } from '@ionic/angular';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage  {
 
   unpID: string = '';
   password: string = '';
   errorMessage: string = '';
+  role: string = '';
 
   constructor(private http: HttpClient, private router: Router, private toastController: ToastController) { }
 
@@ -57,7 +58,6 @@ export class LoginPage implements OnInit {
     toast.present();
   }
 
-  ngOnInit() {
-  }
+
 
 }

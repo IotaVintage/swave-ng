@@ -1,22 +1,48 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content class="ion-padding">
-  <h2>Welcome Back</h2>
-  <p>Please log in to access your account.</p>
+<ion-content >
 
-  <ion-item>
-    <ion-label position="floating">UNP ID</ion-label>
-    <ion-input [(ngModel)]="unpID" required></ion-input>
-  </ion-item>
+  <body>
+    <img src="assets/swave-007-logos/72ppi/colored.png" alt="colored-logo">
+    <h5>Hello,</h5>
+    <h1>Shark!</h1>
 
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input [(ngModel)]="password" type="password" required></ion-input>
-  </ion-item>
+    <div class="main-container">
+      <div class="floating-input">
+        <input required [(ngModel)]="unpID">
+        <label>UNP ID</label>
+      </div>
 
-  <ion-button expand="block" (click)="logIn()">Log In</ion-button>
+      <div class="floating-input" id="password">
+        <input required [(ngModel)]="password" type="password">
+        <label>Password</label>
+      </div>
+
+      <div class="forget">
+        <a href="">Forgot password?</a>
+      </div>
+
+
+      <div class="user-type">
+        <ion-item>
+          <ion-label>Role</ion-label>
+          <ion-select interface="popover" [(ngModel)]="role" name="role" required>
+            <ion-select-option value="Student">Student</ion-select-option>
+            <ion-select-option value="Staff">Admin</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div class="login-btn">
+        <ion-button  (click)="logIn()">Log In</ion-button>
+      </div>
+
+      <div class="guest">
+        <a href="/guest-mode">Not a SHARK? Try GUEST MODE</a>
+      </div>
+
+      <h1 class="creator">sharkwave by <span id="frenzy">DeltaTEK</span> | 2024 </h1>
+    </div>
+
+  </body>
+
 </ion-content>
