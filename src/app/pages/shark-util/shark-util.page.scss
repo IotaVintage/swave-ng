@@ -1,0 +1,61 @@
+ion-header {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-self: center;
+  box-shadow: none;
+  ion-icon {
+    font-size: 27px;
+    margin: 7px
+  }
+  h2 {
+    margin-top: 2px;
+  }
+  ion-avatar {
+    height: 27px;
+    width: 27px;
+    margin: 7px;
+  }
+  ion-img {
+    margin-top: 7px;
+  }
+}
+
+ion-content {
+  --background: white;
+}
+
+div {
+  margin-top: 50px;
+  margin-bottom: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Teachers';
+  align-items: center;
+
+  h5 {
+    margin-top: -1.5px;
+  }
+}
+
+ion-button {
+  height: 150pt;
+  width: 150pt;
+  --border-radius: 7px;
+  --background: #dbddbdcc;
+  --color: white;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --ripple-color: transparent;
+
+  img {
+    color: aliceblue;
+    height: 100px;
+    width: 100px;
+  }
+}

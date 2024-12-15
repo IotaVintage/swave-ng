@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActionSheetController, AlertController, ModalController } from '@ionic/angular';
 import { PostModalComponent } from '../post-modal/post-modal.component';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -19,16 +19,21 @@ export class ProfilePage implements OnInit {
     private http: HttpClient,
     private actionSheetController: ActionSheetController,
     private alertController: AlertController,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private location: Location
   ) {}
 
   ngOnInit() {
     this.loadProfile();
   }
 
+  returnToPrevious() {
+    this.location.back();
+  }
+
   loadProfile() {
     const unpID = localStorage.getItem('unpID');
-    
+
     if (!unpID) {
         this.errorMessage = 'No unpID found. Please log in again.';
         this.isLoading = false;
@@ -180,12 +185,12 @@ fetchImages(unpID: string) {
       },
       backdropDismiss: true, // Allow modal to close by clicking on the backdrop
     });
-  
+
     // Handle data returned from the modal
     modal.onDidDismiss().then((data) => {
       console.log('Modal data:', data.data);
     });
-  
+
     await modal.present();
   }
 }

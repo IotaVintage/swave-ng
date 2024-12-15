@@ -2,19 +2,19 @@ ion-content {
     div {
       margin-top: 1px;
       display: flex;
-  
+
       .currents {
+        font-family: Damili-ExtraBold;
         margin-top: 50px;
         margin-left: 10px;
-        font-family: 'Teachers';
         font-weight: bolder;
-        font-size: 50px;
+        font-size: 40px;
         letter-spacing: -1px;
         background: linear-gradient(to right, #000044, #000092, #2053b1, #2052dc, #02028a);
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-  
+
       .vertical-line {
         border-left: 7px solid #FFDC18;
         height: 55px;
@@ -22,20 +22,20 @@ ion-content {
         margin-left: 12px;
       }
     }
-  
+
     .horizontal {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 1px;
     }
-  
+
     .line {
       height: 1.5px;
       background-color: rgba(157, 157, 157, 0.725);
       width: 100%;
     }
-  
+
     .container {
       width: auto;
       height: auto;
@@ -43,7 +43,7 @@ ion-content {
       gap: 10px;
       margin-inline: 50px;
     }
-  
+
     .card {
       min-width: 70px;
       height: 100%;
@@ -54,26 +54,26 @@ ion-content {
       position: relative;
       transition: flex-grow 0.5s ease;
     }
-  
+
     .card:hover {
       flex-grow: 7;
     }
-  
+
     .card-container {
       margin-left: 10px;
       translate: 0 100%;
       opacity: 0;
     }
-  
+
     .card:hover .title {
       opacity: 1;
       translate: 0 0;
     }
-  
+
     .slider-container {
       padding: 1rem;
     }
-  
+
     .slider {
       display: flex;
       aspect-ratio: 16/9;
@@ -83,19 +83,19 @@ ion-content {
       box-shadow: 0px 3rem 6rem -0.75rem hsla(0%, 0%, 0%, 0.3%);
       border-radius: 0.5rem;
     }
-  
+
     .slider-wrapper {
       position: relative;
       max-width: 48rem;
       margin: 0 auto;
     }
-  
+
     .slider img {
       flex: 1 0 100%;
       scroll-snap-align: start;
       object-fit: cover;
     }
-  
+
     .slider-nav {
       display: flex;
       column-gap: 1rem;
@@ -105,7 +105,7 @@ ion-content {
       transform: translateX(-50%);
       z-index: 1;
     }
-  
+
     .slider-nav a {
       width: 0.5rem;
       height: 0.5rem;
@@ -114,7 +114,7 @@ ion-content {
       opacity: 0.75;
       transition: opacity ease 250ms;
     }
-  
+
     .today-div,
     .week-div,
     .month-div {
@@ -122,7 +122,7 @@ ion-content {
       display: flex;
       gap: 10px;
       margin-bottom: 10px;
-  
+
       .event-card {
         width: 200px;  // Set width for square shape
         height: 200px; // Set height to match width, creating a square
@@ -132,12 +132,12 @@ ion-content {
         flex-direction: column;
         justify-content: space-between;
         box-sizing: border-box;
-  
+
         ion-card-header {
           background: #ffdc18c8;
         }
       }
-  
+
       h3 {
         font-family: 'Teachers';
         font-size: 30px;
@@ -145,4 +145,3 @@ ion-content {
       }
     }
   }
-  

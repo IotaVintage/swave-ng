@@ -65,7 +65,19 @@ const routes: Routes = [
   {
     path: 'guest-mode',
     loadChildren: () => import('./pages/guest-mode/guest-mode.module').then( m => m.GuestModePageModule)
+  },  {
+    path: 'colleges',
+    loadChildren: () => import('./pages/colleges/colleges.module').then( m => m.CollegesPageModule)
   },
+  {
+    path: 'philosophies',
+    loadChildren: () => import('./pages/philosophies/philosophies.module').then( m => m.PhilosophiesPageModule)
+  },
+  {
+    path: 'delta',
+    loadChildren: () => import('./pages/delta/delta.module').then( m => m.DeltaPageModule)
+  },
+
 
 ];
 
