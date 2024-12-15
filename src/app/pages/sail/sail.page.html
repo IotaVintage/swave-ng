@@ -1,29 +1,32 @@
 <ion-content>
-  <ion-list  style="margin-top: 35pt;">
+  <ion-list style="margin-top: 35pt;">
     <ion-item>
       <h1>Hello</h1>
-      <!--  -->
+      <!-- Empty space or additional content can go here -->
     </ion-item>
   </ion-list>
-  <ion-list>
-    <ion-item *ngFor="let post of posts">
-      <ion-avatar slot="start">
-        <img [src]="post.avatarUrl" alt="User Avatar" />
-      </ion-avatar>
-      <ion-label>
-        <h2>{{ post.username }}</h2>
-        <p>{{ post.timestamp | date: 'short' }}</p>
-      </ion-label>
-    </ion-item>
 
+  <ion-list>
     <ion-card *ngFor="let post of posts">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="post.avatarUrl" alt="User Avatar" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ post.username }}</h2>
+          <p>{{ post.timestamp | date: 'short' }}</p>
+        </ion-label>
+      </ion-item>
+
       <ion-card-header>
         <ion-card-title>{{ post.title }}</ion-card-title>
       </ion-card-header>
+
       <ion-card-content>
         <p>{{ post.content }}</p>
         <img *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Post Image" />
       </ion-card-content>
+
       <ion-item lines="none">
         <ion-button fill="clear" slot="start" (click)="likePost(post)">
           👍 Like
@@ -35,4 +38,3 @@
     </ion-card>
   </ion-list>
 </ion-content>
-
