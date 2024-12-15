@@ -1,14 +1,58 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-post-modal',
   templateUrl: './post-modal.component.html',
   styleUrls: ['./post-modal.component.scss'],
 })
-export class PostModalComponent  implements OnInit {
+export class PostModalComponent {
+  postContent: string = '';
+  selectedFile: File | null = null;
+  selectedTags: string[] = [];
+  predefinedTags: string[] = ['Tag1', 'Tag2', 'Tag3', 'Tag4'];
 
-  constructor() { }
+  constructor(
+    private modalController: ModalController,
+    private http: HttpClient,
+  ) {}
 
-  ngOnInit() {}
+  dismiss() {
+    this.modalController.dismiss();
+  }
 
+  onFileSelected(event: Event) {
+    const fileInput = event.target as HTMLInputElement;
+    if (fileInput.files && fileInput.files.length > 0) {
+      this.selectedFile = fileInput.files[0];
+    }
+  }
+
+  submitPost() {
+    const userId = '1';
+    if (!userId) {
+      console.error('User  is not logged in');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('userID', userId);
+    formData.append('caption', this.postContent);
+    if (this.selectedFile) {
+      formData.append('media', this.selectedFile);
+    }
+    this.selectedTags.forEach(tag => {
+      formData.append('tags[]', tag);
+    });
+
+    // Replace with your API endpoint
+    this.http.post('http://localhost:3000/create-post', formData, { withCredentials: true })
+      .subscribe(response => {
+        console.log('Post created successfully:', response);
+        this.dismiss(); 
+      }, error => {
+        console.error('Error creating post:', error);
+      });
+  }
 }
