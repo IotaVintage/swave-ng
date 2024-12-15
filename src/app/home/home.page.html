@@ -1,10 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-tab-button routerLink="/profile">
-        <ion-icon name="person" style="font-size: 20px;"></ion-icon>
-      </ion-tab-button>
-    </ion-buttons>
+<ion-header class="home-header">
+    <div class="profile-admin">
+      <ion-button id="admin" fill="clear" *ngIf="isAdmin">
+        <ion-icon name="brush"></ion-icon>
+      </ion-button>
+      <ion-button id="profile" fill="clear" routerLink="/profile">
+          <ion-icon name="person" style="font-size: 20px;"></ion-icon>
+      </ion-button>
+    </div>
+
+    <div class="head">
+      <h1>sharkwave</h1>
+    </div>
+
+    <div class="search" >
+      <ion-button fill="clear" routerLink="/home/search">
+        <ion-icon name="search"></ion-icon>
+      </ion-button>
+    </div>
+    <!-- <ion-button>
+
+    </ion-button>
+
+
     <ion-title class="sharkwave">
       <h2 style="font-family: 'Damili-Light'; margin-top: 10px;">sharkwave</h2>
     </ion-title>
@@ -12,8 +29,8 @@
       <ion-tab-button routerLink="/home/search">
         <ion-icon name="search" style="font-size: 20px;"></ion-icon>
       </ion-tab-button>
-    </ion-buttons>
-  </ion-toolbar>
+    </ion-buttons> -->
+
 </ion-header>
 
 <ion-content>
@@ -30,7 +47,7 @@
       <ion-icon name="boat-outline"></ion-icon>
     </ion-tab-button>
 
-    <ion-tab-button tab="shark-util" routerLink="/home/shark-util">
+    <ion-tab-button tab="shark-util" routerLink="/home/shark">
       <ion-img src="/assets/swave-007-logos/72ppi/colored.png" alt="swave-logo" style="height: 40px;"></ion-img>
     </ion-tab-button>
 

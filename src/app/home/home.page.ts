@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  isAdmin: boolean = false;
 
+  constructor() {
+    this.isAdmin = this.checkIfUserIsAdmin();
+  }
 
+  checkIfUserIsAdmin(): boolean {
+    return true;
+  }
 
 }

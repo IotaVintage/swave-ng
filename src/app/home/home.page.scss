@@ -5,7 +5,9 @@ ion-header {
   align-items: center;
   height: 50px;
 }
-
+.home-header {
+  background: white;
+}
 ion-toolbar {
   display: flex;
   justify-content: space-between;
@@ -64,10 +66,42 @@ ion-tab-button ion-img {
   cursor: pointer;
 }
 
-.icon {
-  color: white;
+// .icon {
+//   color: white;
+// }
+
+
+.profile-admin {
+  #admin, #profile {
+    --padding-start:5px;
+    --padding-end:5px;
+    ion-icon {
+      height: 25px;
+      width: 25px;
+    }
+  }
 }
 
+.search {
+  --padding-start:5px;
+    --padding-end:5px;
+    ion-icon {
+      height: 25px;
+      width: 25px;
+  }
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+
+  h1 {
+    margin-top: 16px;
+    color: #373737;
+    font-family: Damili-Light;
+  }
+}
 
 //Semi-Radial styling
 
