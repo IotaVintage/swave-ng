@@ -1,0 +1,57 @@
+ion-content {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+
+  img {
+    margin-top: 40px;
+    filter: drop-shadow(0 0.75rem 0.5rem #00000070);
+  }
+  h3 {
+    font-family: Damili-Regular;
+    font-size: 23px;
+    background: linear-gradient(to right, #a49100, #9c900e, #958e10, #e4e003c8, #b4ab03);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: gray;
+
+  }
+  h2 {
+    font-family: Damili-Bold;
+    font-size: 33px;
+    background: linear-gradient(to right, #000044, #000092, #2053b1, #2052dc, #02028a);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+  h4 {
+    font-family: Damili-Light;
+    font-size: 22px;
+  }
+}
+
+.horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6px;
+}
+.line {
+  height: 6px;
+  background-color: rgba(9, 132, 21, 0.725);
+  width: 75%;
+}
+
+h5 {
+margin-top: -2px;
+font-family: Damili-Regular;
+background: linear-gradient(to right, #a49100, #9c900e, #958e10, #e4e003c8, #b4ab03);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
