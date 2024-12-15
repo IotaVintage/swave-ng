@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
@@ -8,11 +8,12 @@ import { ToastController } from '@ionic/angular';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage  {
 
   unpID: string = '';
   password: string = '';
   errorMessage: string = '';
+  role: string = '';
 
   constructor(private http: HttpClient, private router: Router, private toastController: ToastController) { }
 
@@ -30,14 +31,9 @@ export class LoginPage implements OnInit {
         localStorage.setItem('unpID', response.user.unpID);
         localStorage.setItem('userType', response.user.userType);
 
-        // Redirect based on user type
-        if (response.user.userType === 'admin') {
-          this.presentToast('Login Successfully!');
-          this.router.navigate(['/admin-home']); // Redirect to admin page
-        } else {
-          this.presentToast('Login Successfully!');
-          this.router.navigate(['/home']); // Redirect to client page
-        }
+        const userType = response.user.userType;
+        
+        this.checkRole(userType);
       },
       (error) => {
         this.errorMessage = error.error?.error || 'Login failed. Please try again.';
@@ -57,7 +53,20 @@ export class LoginPage implements OnInit {
     toast.present();
   }
 
-  ngOnInit() {
-  }
+  checkRole(userType: string) {
+    const role = this.role;
 
+    if(role != userType) {
+      this.presentToast('Account non-existent please check properly the role type or Register!');
+    } else {
+      // Redirect based on user type
+      if (userType === 'admin') {
+        this.presentToast('Login Successfully!');
+        this.router.navigate(['/admin-home']); // Redirect to admin page
+      } else {
+        this.presentToast('Login Successfully!');
+        this.router.navigate(['/home']); // Redirect to client page
+      }
+    }
+  }
 }
