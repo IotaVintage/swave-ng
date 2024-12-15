@@ -2,11 +2,19 @@
   <ion-list style="margin-top: 35pt;">
     <ion-item>
       <h1>Hello</h1>
-      <!-- Empty space or additional content can go here -->
+      <!-- Post Creation Button -->
+      <div class="add-post-btn">
+        <ion-button (click)="openPostModal()">+</ion-button>
+      </div>
     </ion-item>
   </ion-list>
 
   <ion-list>
+    <!-- Pull to refresh -->
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
     <ion-card *ngFor="let post of posts">
       <ion-item lines="none">
         <ion-avatar slot="start">

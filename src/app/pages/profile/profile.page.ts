@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActionSheetController, AlertController, ModalController } from '@ionic/angular';
+import { PostModalComponent } from '../post-modal/post-modal.component';
 
 @Component({
   selector: 'app-profile',
@@ -11,8 +12,8 @@ export class ProfilePage implements OnInit {
   profile: any = null;
   isLoading: boolean = true;
   errorMessage: string = '';
-  defaultProfilePicture: string = 'assets/default-profile.png';
-  defaultCoverPhoto: string = 'assets/default-cover.jpg';
+  defaultProfilePicture: string = 'assets/swave-007-logos/72ppi/black.png';
+  defaultCoverPhoto: string = 'assets/swave-007-logos/72ppi/black.png';
 
   constructor(
     private http: HttpClient,
@@ -27,6 +28,7 @@ export class ProfilePage implements OnInit {
 
   loadProfile() {
     const unpID = localStorage.getItem('unpID');
+    
     if (!unpID) {
         this.errorMessage = 'No unpID found. Please log in again.';
         this.isLoading = false;
@@ -168,5 +170,22 @@ fetchImages(unpID: string) {
         this.errorMessage = 'Error updating bio. Please try again.';
       },
     });
+  }
+
+  async openPostModal() {
+    const modal = await this.modalController.create({
+      component: PostModalComponent,
+      componentProps: {
+        // Pass any data you need to the modal
+      },
+      backdropDismiss: true, // Allow modal to close by clicking on the backdrop
+    });
+  
+    // Handle data returned from the modal
+    modal.onDidDismiss().then((data) => {
+      console.log('Modal data:', data.data);
+    });
+  
+    await modal.present();
   }
 }

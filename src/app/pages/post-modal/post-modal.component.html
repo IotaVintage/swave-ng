@@ -14,17 +14,17 @@
       <ion-textarea [(ngModel)]="postContent" name="caption" required></ion-textarea>
     </ion-item>
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-label>Media</ion-label>
       <input type="file" (change)="onFileSelected($event)" />
-    </ion-item>
+    </ion-item> -->
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-label>Tags</ion-label>
       <ion-select [(ngModel)]="selectedTags" multiple="true" name="tags">
         <ion-select-option *ngFor="let tag of predefinedTags" [value]="tag">{{ tag }}</ion-select-option>
       </ion-select>
-    </ion-item>
+    </ion-item> -->
 
     <ion-button expand="full" type="submit" [disabled]="!postForm.valid">Create Post</ion-button>
   </form>

@@ -15,4 +15,9 @@ export class PostService {
   getAllPosts(): Observable<any> {
     return this.http.get(`${this.baseUrl}/get-posts`);
   }
+
+  // Method to fetch all posts
+  createPost(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/create-post`);
+  }
 }

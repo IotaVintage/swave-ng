@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
+import { ActionSheetController, AlertController, ModalController } from '@ionic/angular';
+import { PostModalComponent } from '../post-modal/post-modal.component';
 
 @Component({
   selector: 'app-sail',
@@ -11,7 +13,12 @@ export class SailPage implements OnInit {
   isLoading: boolean = true; // Loading state
   errorMessage: string | null = null; // Error message state
 
-  constructor(private postsService: PostService) {}
+  constructor(
+    private postsService: PostService, 
+    private actionSheetController: ActionSheetController,
+    private alertController: AlertController,
+    private modalController: ModalController
+  ) {}
 
   ngOnInit() {
     this.fetchPosts();
@@ -47,4 +54,29 @@ export class SailPage implements OnInit {
     post.commentCount++;
     console.log(`Comment added to: ${post.content} | Total Comments: ${post.commentCount}`);
   }
+
+  // Refresh posts when pull-to-refresh is triggered
+  doRefresh(event: any) {
+    this.fetchPosts();
+    setTimeout(() => {
+      event.target.complete(); // End the refresher after fetching posts
+    }, 1000); // Adjust time as needed
+  }
+
+  async openPostModal() {
+      const modal = await this.modalController.create({
+        component: PostModalComponent,
+        componentProps: {
+          // Pass any data you need to the modal
+        },
+        backdropDismiss: true, // Allow modal to close by clicking on the backdrop
+      });
+    
+      // Handle data returned from the modal
+      modal.onDidDismiss().then((data) => {
+        console.log('Modal data:', data.data);
+      });
+    
+      await modal.present();
+    }
 }
