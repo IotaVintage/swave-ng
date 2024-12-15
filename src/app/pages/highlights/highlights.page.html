@@ -1,3 +1,122 @@
-<ion-content>
-  <div style="margin-top:50px">HIGLIGHTS</div>
+<ion-content [fullscreen]="true">
+  <!-- CURRENTS SECTION -->
+  <div name="currents">
+    <h3 class="currents">CURRENTS</h3>
+    <div class="vertical-line"></div>
+  </div>
+  <div class="horizontal">
+    <div class="line"></div>
+  </div>
+  <section class="slider-container">
+    <div class="slider-wrapper">
+      <div class="slider">
+        <img id="event-1" src="/assets/swave-007-logo/300ppi/colored.png" alt="event-1">
+        <img id="event-2" src="/assets/swave-007-logo/300ppi/colored.png" alt="event-2">
+        <img id="event-3" src="/assets/swave-007-logo/300ppi/colored.png" alt="event-3">
+        <img id="event-4" src="/assets/swave-007-logo/300ppi/colored.png" alt="event-4">
+        <img id="event-5" src="/assets/swave-007-logo/300ppi/colored.png" alt="event-5">
+      </div>
+      <div class="slider-nav">
+        <a href="#event-1"></a>
+        <a href="#event-2"></a>
+        <a href="#event-3"></a>
+        <a href="#event-4"></a>
+        <a href="#event-5"></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="horizontal">
+    <div class="line"></div>
+  </div>
+
+  <!-- TODAY SECTION -->
+  <div>
+    <h3 style="font-family: 'Teachers'; font-size: 30px; margin-left: 10px;"><strong>TODAY</strong></h3>
+  </div>
+  <div class="today-div">
+    <div>
+      <ion-card (click)="openEventDetail('Event 002')">
+        <ion-img src="/assets/images/default-event.png" alt="Default Event Image"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Event 002</ion-card-title>
+          <ion-card-subtitle>Date</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          This is the description placeholder. Hooray!
+        </ion-card-content>
+      </ion-card>
+      
+      <ion-card (click)="openEventDetail('Event 003')">
+        <ion-img src="/assets/images/default-event.png" alt="Default Event Image"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Event 003</ion-card-title>
+          <ion-card-subtitle>Date</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          This is the description placeholder. Hooray!
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card (click)="openEventDetail('Event 004')">
+        <ion-img src="/assets/images/default-event.png" alt="Default Event Image"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Event 004</ion-card-title>
+          <ion-card-subtitle>Date</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          This is the description placeholder. Hooray!
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="horizontal">
+    <div class="line"></div>
+  </div>
+
+  <!-- THIS MONTH SECTION -->
+  <div>
+    <h3 style="font-family: 'Teachers'; font-size: 30px; margin-left: 10px;"><strong>THIS MONTH</strong></h3>
+  </div>
+  <div class="month-div">
+    <div>
+      <ion-card (click)="openEventDetail('Event 002')">
+        <ion-img src="/assets/images/default-event.png" alt="Default Event Image"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Event 002</ion-card-title>
+          <ion-card-subtitle>Date</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          This is the description placeholder. Hooray!
+        </ion-card-content>
+      </ion-card>
+      
+      <ion-card (click)="openEventDetail('Event 003')">
+        <ion-img src="/assets/images/default-event.png" alt="Default Event Image"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Event 003</ion-card-title>
+          <ion-card-subtitle>Date</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          This is the description placeholder. Hooray!
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card (click)="openEventDetail('Event 004')">
+        <ion-img src="/assets/images/default-event.png" alt="Default Event Image"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Event 004</ion-card-title>
+          <ion-card-subtitle>Date</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          This is the description placeholder. Hooray!
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+
+  <div class="horizontal">
+    <div class="line"></div>
+  </div>
 </ion-content>

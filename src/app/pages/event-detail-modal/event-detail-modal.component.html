@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Event Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Event Title</ion-label>
+    <ion-input [(ngModel)]="event.title" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Event Date</ion-label>
+    <ion-datetime [(ngModel)]="event.date"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Event Description</ion-label>
+    <ion-textarea [(ngModel)]="event.description"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="event.image" type="file" (change)="onFileSelected($event)"></ion-input>
+  </ion-item>
+
+  <ion-buttons>
+    <ion-button expand="full" (click)="saveEvent()">Save Changes</ion-button>
+  </ion-buttons>
+  <ion-buttons>
+    <ion-button expand="full" color="danger" (click)="deleteEvent()">Delete Event</ion-button>
+  </ion-buttons>
+</ion-content>
