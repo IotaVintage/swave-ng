@@ -1,22 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Location } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+
 @Component({
   selector: 'app-account-setup',
   templateUrl: './account-setup.page.html',
   styleUrls: ['./account-setup.page.scss'],
 })
-export class AccountSetupPage  {
-sex: any;
+export class AccountSetupPage {
+  password: string = '';
+  barangay: string = '';
+  cityTown: string = '';
+  province: string = '';
+  contactNumber: string = '';
+  birthday: string = '';
+  age: number | null = null;
+  sex: string = '';
+  college: string = '';
+  program: string = '';
+  section: string = '';
+  currentPrograms: string[] = [];
+  userDetails: any;
 
-  constructor(private location: Location) { }
+  constructor(private http: HttpClient, private router: Router, private toastController: ToastController, private location: Location) {
+    this.userDetails = JSON.parse(localStorage.getItem('userDetails') || '{}');
+  }
 
   returnToPrevious() {
     this.location.back();
   }
 
-  college: string = '';
-  course: string = '';
-  currentCourses: string[] = [];
   colleges = [
     { name: 'CAS', value: 'CAS' },
     { name: 'CCIT', value: 'CCIT' },
@@ -36,7 +51,7 @@ sex: any;
     { name: 'CHTM', value: 'CHTM' }
   ];
 
-  courses: { [key: string]: string[] } = {
+  programs: { [key: string]: string[] } = {
     CAS: ['BA Political Science', 'BA Communications', 'BS Biology', 'BS Marine Biology', 'BS Mathematics', 'BS Physics', 'BS Environmental Science', 'BS Psychology', 'MA Guidance & Counseling'],
     CCIT: ['BS Computer Science', 'BS Information Technology', 'Bachelor of Library and Information Science', 'Diploma in Computer Technology'],
     CBAA: ['BS Business Administration', 'BS Accountancy', 'BS Entrepreneurship', 'BS Cooperative Management', 'Associate in Office Management', 'Master in Business Administration', 'Doctor in Business Administration'],
@@ -55,8 +70,55 @@ sex: any;
     CHTM: ['BS Hospitality Management', 'BS Tourism Management']
   };
 
-  updateCourses() {
-    this.currentCourses = this.courses[this.college] || [];
+  updatePrograms() {
+    this.currentPrograms = this.programs[this.college] || [];
   }
 
+  completeRegistration() {
+    const data = {
+      unpID: this.userDetails.unpID,
+      password: this.password,
+      barangay: this.barangay,
+      cityTown: this.cityTown,
+      province: this.province,
+      contactNumber: this.contactNumber,
+      birthday: this.birthday,
+      age: this.age,
+      sex: this.sex,
+      college: this.college,
+      program: this.program,
+      section: this.section,
+    };
+
+    console.log(this.userDetails.unpID + ' ' + this.password + ' ' + this.barangay);
+    console.log(this.cityTown + ' ' + this.province + ' ' + this.contactNumber);
+    console.log(this.birthday + ' ' + this.age + ' ' + this.sex);
+    console.log(this.college + ' ' + this.program + ' ' + this.section);
+
+    this.http.post('http://localhost:3000/user/account-setup', data).subscribe(
+      () => {
+        this.presentToast('Account Registered Successfully!');
+        this.router.navigate(['/login']);
+      },
+      (error) => {
+        this.presentToast('Error completing registration');
+      }
+    );
+  }
+
+  // Function to show toast messages
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 3000,
+      position: 'bottom',
+      color: 'success',
+    });
+    toast.present();
+  }
+
+  accountSetup(){
+    console.log('Verifying Account Details Properly');
+    this.completeRegistration();
+  }
 }

@@ -16,12 +16,12 @@
       </div>
       <form action="">
         <div class="floating-sharkid">
-          <input type="text"  required>
+          <input type="text" name="unpID" required [(ngModel)]="unpID" (keydown.enter)="searchUnpID()">
           <label>SharkID</label>
         </div>
 
         <div class="three">
-          <ion-button routerLink="/code-auth">      <!--NEXT BUTTON PRESSESD,-->
+          <ion-button (click)="onNextButtonClick()">      <!--NEXT BUTTON PRESSESD,-->
             Next                                    <!--IF ID VALID && ID IN DB,-->
           </ion-button>                             <!--THEN REDIRECT TO CODE-AUTH-->
         </div>

@@ -23,7 +23,7 @@
             <ion-input #otp5 type="text" maxlength="1" inputmode="numeric" (input)="moveToNext($event, otp6)"></ion-input>
             <ion-input #otp6 type="text" maxlength="1" inputmode="numeric"></ion-input>
           </div>
-          <ion-button id="verify" expand="block" (click)="verifyOtp()" routerLink="/account-preview">Verify</ion-button>
+          <ion-button id="verify" expand="block" (click)="verifyOtp()">Verify</ion-button>
           <ion-button id="resend" fill="clear" color="medium" (click)="resendOtp()">Resend Code</ion-button>
         </ion-card-content>
       </ion-card>

@@ -6,13 +6,16 @@ import { IonicModule } from '@ionic/angular';
 import { IonItemOption } from '@ionic/angular';
 import { AccountSetupPageRoutingModule } from './account-setup-routing.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AccountSetupPage } from './account-setup.page';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AccountSetupPageRoutingModule
+    AccountSetupPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [AccountSetupPage, ]
 })

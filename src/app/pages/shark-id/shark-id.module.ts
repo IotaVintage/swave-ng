@@ -8,12 +8,15 @@ import { SharkIdPageRoutingModule } from './shark-id-routing.module';
 
 import { SharkIdPage } from './shark-id.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SharkIdPageRoutingModule
+    SharkIdPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [SharkIdPage]
 })

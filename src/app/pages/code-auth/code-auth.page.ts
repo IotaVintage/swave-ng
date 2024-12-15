@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { Route } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-code-auth',
@@ -9,9 +8,8 @@ import { Route } from '@angular/router';
   styleUrls: ['./code-auth.page.scss'],
 })
 export class CodeAuthPage  {
-  router: any;
-
-  constructor(private location: Location) { }
+  
+  constructor(private location: Location, private router: Router) { }
 
   returnToPrevious() {
     this.location.back();
@@ -29,9 +27,8 @@ export class CodeAuthPage  {
   }
 
   verifyOtp() {
-    // Combine OTP input values and validate
-
-    // console.log('OTP Entered:', this.otp);
+    console.log('OTP Entered:', this.otp);
+    this.router.navigate(['/account-preview']);
   }
 
   resendOtp() {

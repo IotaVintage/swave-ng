@@ -13,17 +13,17 @@
     <div class="credentials">
       <h3>CREDENTIALS</h3>
       <div class="input-box">
-        <input type="text"  required>
+        <input type="text"  required [value]="userDetails.fname + ' ' + userDetails.lname" readonly>
         <label>SharkID</label>
       </div>
 
       <div class="input-box">
-        <input type="password" required>
+        <input type="password" [(ngModel)]="password" name="password" required>
         <label>Password</label>
       </div>
 
       <div class="input-box">
-        <input type="text"  required>
+        <input type="text"  required [value]="userDetails.email" readonly>
         <label>UNP E-mail</label>
       </div>
     </div>
@@ -34,17 +34,17 @@
 
       <div class="name">
         <div class="input-box">
-          <input type="text"  required>
+          <input type="text"  required [value]="userDetails.fname" readonly>
           <label>First Name</label>
         </div>
 
         <div class="input-box">
-          <input type="text"  required>
+          <input type="text"  required [value]="userDetails.mname" readonly>
           <label>Middle Name</label>
         </div>
 
         <div class="input-box">
-          <input type="text"  required>
+          <input type="text"  required [value]="userDetails.lname" readonly>
           <label>Last Name</label>
         </div>
       </div>
@@ -52,17 +52,17 @@
       <h6>Address</h6>
       <div class="address">
         <div class="input-box">
-          <input type="text"  required>
+          <input type="text" [(ngModel)]="barangay" name="barangay" required>
           <label>Barangay</label>
         </div>
 
         <div class="input-box">
-          <input type="text"  required>
+          <input type="text"  [(ngModel)]="cityTown" name="cityTown" required>
           <label>City/Town</label>
         </div>
 
         <div class="input-box">
-          <input type="text"  required>
+          <input type="text" [(ngModel)]="province" name="province" required>
           <label>Province</label>
         </div>
       </div>
@@ -70,24 +70,24 @@
       <h6>Others</h6>
       <div class="address">
         <div class="input-box">
-          <input type="text"  required>
+          <input type="text" [(ngModel)]="contactNumber" name="contactNumber" type="tel" required>
           <label>Contact Number</label>
         </div>
 
         <div class="input-box">
-          <input type="text"  required>
+          <input type="text" [(ngModel)]="birthday" name="birthday" type="date" required>
           <label>Birthday</label>
         </div>
 
         <div class="input-box" id="age">
-          <input type="floating" type="number"  required>
+          <input type="floating" [(ngModel)]="age" name="age" type="number">
           <label>Age</label>
         </div>
 
         <div class="input-box" id="sex">
           <ion-item>
             <ion-label>Sex</ion-label>
-            <ion-select interface="popover">
+            <ion-select interface="popover" [(ngModel)]="sex" name="sex" required>
               <ion-select-option value="Male">Male</ion-select-option>
               <ion-select-option value="Female">Female</ion-select-option>
             </ion-select>
@@ -101,7 +101,7 @@
         <div class="college-program">
           <ion-item [class.is-invalid]="collegeCtrl.invalid && collegeCtrl.touched" lines="none" style="margin-bottom: 20px">
             <ion-label position="floating-input">College</ion-label>
-            <ion-select [(ngModel)]="college" name="college" required (ionChange)="updateCourses()" #collegeCtrl="ngModel" interface="popover">
+            <ion-select [(ngModel)]="college" name="college" required (ionChange)="updatePrograms()" #collegeCtrl="ngModel" interface="popover">
               <ion-select-option *ngFor="let college of colleges" [value]="college.value">{{ college.name }}</ion-select-option>
             </ion-select>
             <ion-icon name="warning" slot="end" *ngIf="collegeCtrl.invalid && collegeCtrl.touched" color="danger"></ion-icon>
@@ -110,8 +110,8 @@
 
           <ion-item [class.is-invalid]="courseCtrl.invalid && courseCtrl.touched" lines="none">
             <ion-label>Program</ion-label>
-            <ion-select [(ngModel)]="course" name="course" required #courseCtrl="ngModel" interface="popover">
-              <ion-select-option *ngFor="let course of currentCourses" [value]="course">{{ course }}</ion-select-option>
+            <ion-select [(ngModel)]="program" name="program" required #courseCtrl="ngModel" interface="popover">
+              <ion-select-option *ngFor="let course of currentPrograms" [value]="course">{{ course }}</ion-select-option>
             </ion-select>
             <ion-icon name="warning" slot="end" *ngIf="courseCtrl.invalid && courseCtrl.touched" color="danger"></ion-icon>
           </ion-item>
@@ -119,15 +119,15 @@
 
         </div>
         <div class="input-box">
-          <input type="text"  required>
-          <label for="sectiom">Section</label>
+          <input type="text"  [(ngModel)]="section" name="section" required>
+          <label for="section">Section</label>
         </div>
       </div>
     </div>
   </form>
 
   <div class="next">
-    <ion-button routerLink="/interests">
+    <ion-button (click)="accountSetup()">
       Next
     </ion-button>
   </div>

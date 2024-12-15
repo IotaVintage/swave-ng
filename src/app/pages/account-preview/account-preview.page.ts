@@ -6,11 +6,13 @@ import { Location } from '@angular/common';
   styleUrls: ['./account-preview.page.scss'],
 })
 export class AccountPreviewPage {
+  userDetails: any;
   
-  constructor(private location: Location) { }
+  constructor(private location: Location) {
+    this.userDetails = JSON.parse(localStorage.getItem('userDetails') || '{}');
+  }
 
   returnToPrevious() {
     this.location.back();
   }
-
 }
