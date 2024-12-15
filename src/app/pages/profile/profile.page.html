@@ -4,10 +4,58 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">profile</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <!-- Loading Indicator -->
+  <div *ngIf="isLoading">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Loading profile...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Profile Content -->
+  <div *ngIf="profile && !isLoading">
+    <div class="image-section">
+      <h3>Cover Photo</h3>
+      <div class="profile-img-container" (click)="openImageOptions('CoverPhoto')">
+        <div class="cover-img-container">
+          <img
+            [src]="profile.CoverPhoto ? profile.CoverPhoto : defaultCoverPhoto"
+            alt="Cover Photo"
+            class="cover-img"
+          />
+        </div>
+        <div class="profile-img-overlay" (click)="openImageOptions('ProfilePic')">
+          <img
+            [src]="profile.ProfilePic ? profile.ProfilePic : defaultProfilePicture"
+            alt="Profile Picture"
+            class="profile-img"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <ion-item>
+      <ion-label position="stacked">
+        Bio
+        <ion-icon name="create-outline" slot="end" (click)="openBioOptions()"></ion-icon>
+      </ion-label>
+      <ion-textarea [(ngModel)]="profile.Bio" name="bio" readonly></ion-textarea>
+    </ion-item>
+
+    <!-- Display User Information -->
+    <h2>{{ profile.Fname }} {{ profile.Mname || '' }} {{ profile.Lname }}</h2>
+    <p><strong>unpID:</strong> {{ profile.UnpID }}</p>
+    <p><strong>College:</strong> {{ profile.College }}</p>
+    <p><strong>Program:</strong> {{ profile.Program }}</p>
+
+    <!-- Post Creation Button -->
+    <div class="add-post-btn">
+      <ion-button (click)="openPostModal()">+</ion-button>
+    </div>
+  </div>
 </ion-content>

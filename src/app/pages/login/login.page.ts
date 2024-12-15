@@ -31,14 +31,9 @@ export class LoginPage  {
         localStorage.setItem('unpID', response.user.unpID);
         localStorage.setItem('userType', response.user.userType);
 
-        // Redirect based on user type
-        if (response.user.userType === 'admin') {
-          this.presentToast('Login Successfully!');
-          this.router.navigate(['/admin-home']); // Redirect to admin page
-        } else {
-          this.presentToast('Login Successfully!');
-          this.router.navigate(['/home']); // Redirect to client page
-        }
+        const userType = response.user.userType;
+        
+        this.checkRole(userType);
       },
       (error) => {
         this.errorMessage = error.error?.error || 'Login failed. Please try again.';
@@ -58,6 +53,20 @@ export class LoginPage  {
     toast.present();
   }
 
+  checkRole(userType: string) {
+    const role = this.role;
 
-
+    if(role != userType) {
+      this.presentToast('Account non-existent please check properly the role type or Register!');
+    } else {
+      // Redirect based on user type
+      if (userType === 'admin') {
+        this.presentToast('Login Successfully!');
+        this.router.navigate(['/admin-home']); // Redirect to admin page
+      } else {
+        this.presentToast('Login Successfully!');
+        this.router.navigate(['/home']); // Redirect to client page
+      }
+    }
+  }
 }
