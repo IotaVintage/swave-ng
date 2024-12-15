@@ -10,14 +10,79 @@ $pudaw: white;      //Nasaririt White
 * {
   font-family: Damili-Regular;
 }
-.interests-list ion-button {
-  --border-color: 1px solid #00195b;
-  --border-radius: 7px;
-  --color: #00195b;
-  --ripple-color: #00195b;
-  --background: white;
+
+
+//BACK BUTTON
+.back {
+  position: absolute;
+  margin-top: 9%;
+  z-index: 3;
+}
+
+.back ion-button {
+  margin-left: 7px;
+  --padding-start: 7pt;
+  --padding-end: 7pt;
 
 }
 
 
+.back ion-icon {
+  font-size: 15pt;
+  color: $uging;
+}
 
+//LOGO
+.logo ion-img {
+  margin-left: 20px;
+  margin-top: 50pt;
+  width: 100px;
+  height: 100px;
+}
+
+//p tag
+#title {
+  margin-left: 20px;
+  margin-top: -10px;
+  font-size: 25pt;
+  font-family: Damili-Bold;
+}
+
+//SUBMIT
+.submit ion-button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 75%;
+  --background: #025e00;
+  --border-radius: 7px;
+  --box-shadow: none;
+  --background-activated: #ffffff;
+  --color-activated:$dalluyon;
+  --ripple-color: $dalluyon 0.25;
+}
+
+.description {
+  margin-top: -20px;
+  margin-left: 20px;
+  color: $asok
+}
+
+
+.interests-list {
+  h3, p{
+    margin-left: 20px;
+  }
+
+  p {
+    margin-top: -5px;
+    margin-bottom: -2px
+  }
+  .main-list ion-button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+  }
+}

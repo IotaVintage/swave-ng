@@ -14,17 +14,17 @@ export class InterestsPage  {
   }
 
   interests = [
-    { label: 'News', value: 'news', isFilled: false },
-    { label: 'Sports', value: 'sports', isFilled: false },
-    { label: 'Dance', value: 'dance', isFilled: false },
-    { label: 'History', value: 'history', isFilled: false },
-    { label: 'Technology', value: 'technology', isFilled: false },
-    { label: 'Arts & Design', value: 'arts-design', isFilled: false },
-    { label: 'Automotive', value: 'automotive', isFilled: false },
-    { label: 'Institutional Services', value: 'institutional-services', isFilled: false },
-    { label: 'Reading', value: 'reading', isFilled: false },
-    { label: 'Drawing', value: 'drawing', isFilled: false },
-    { label: 'Legal Matters', value: 'legal-matters', isFilled: false },
+    { label: 'News', value: 'News', isFilled: false },
+    { label: 'Sports', value: 'Sports', isFilled: false },
+    { label: 'Dance', value: 'Dance', isFilled: false },
+    { label: 'History', value: 'History', isFilled: false },
+    { label: 'Technology', value: 'Technology', isFilled: false },
+    { label: 'Arts & Design', value: 'Arts&Design', isFilled: false },
+    { label: 'Automotive', value: 'Automotive', isFilled: false },
+    { label: 'Institutional Services', value: 'Institutional Services', isFilled: false },
+    { label: 'Reading', value: 'Reading', isFilled: false },
+    { label: 'Drawing', value: 'Drawing', isFilled: false },
+    { label: 'Legal Matters', value: 'Legal Matters', isFilled: false },
   ];
 
   // Array to store selected interest values
