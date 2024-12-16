@@ -1,0 +1,30 @@
+<!-- event-detail-modal.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Event Creation</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal(false)">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Event Title</ion-label>
+    <ion-input [(ngModel)]="event.EventName" type="text" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Event Date</ion-label>
+    <ion-datetime [(ngModel)]="event.EventDate" required></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Event Description</ion-label>
+    <ion-textarea [(ngModel)]="event.Description" required></ion-textarea>
+  </ion-item>
+
+  <ion-buttons>
+    <ion-button expand="full" (click)="postEvent()">Post Event</ion-button>
+  </ion-buttons>
+</ion-content>

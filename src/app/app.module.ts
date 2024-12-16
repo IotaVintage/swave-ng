@@ -11,10 +11,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { PostModalComponent } from './pages/post-modal/post-modal.component';
 import { EventDetailModalComponent } from './pages/event-detail-modal/event-detail-modal.component';
+import { EventCreationModalComponent } from './pages/event-creation-modal/event-creation-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, PostModalComponent, EventDetailModalComponent],
+  declarations: [AppComponent, PostModalComponent, EventDetailModalComponent, EventCreationModalComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

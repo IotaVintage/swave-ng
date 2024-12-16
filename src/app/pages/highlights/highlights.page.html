@@ -9,10 +9,14 @@
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+  <!-- Post Creation Button -->
+  <div class="add-post-btn">
+    <ion-button (click)="openEventCreation()" *ngIf="isAdmin">+</ion-button>
+  </div>
+  <div class="vertical-line"></div>
   <!-- CURRENTS SECTION -->
   <div name="currents">
     <h3 class="currents">CURRENTS</h3>
-    <div class="vertical-line"></div>
   </div>
   <div class="horizontal">
     <div class="line"></div>
@@ -20,7 +24,7 @@
 
   <section class="slider-container">
     <div class="slider-wrapper">
-      <ion-card *ngFor="let event of currents" (click)="openEventDetail(event)">
+      <ion-card *ngFor="let event of currents" (click)="checkIfUserIsAdmin() && openEventDetail(event)">
         <ion-card-header>
           <ion-card-title>{{ event.EventName }}</ion-card-title>
         </ion-card-header>
@@ -41,7 +45,7 @@
     <h3 style="font-family: 'Damili-Semibold'; font-size: 30px; margin-left: 10px;"><strong>TODAY</strong></h3>
   </div>
   <div class="today-div">
-    <ion-card *ngFor="let event of todayEvents" (click)="openEventDetail(event)">
+    <ion-card *ngFor="let event of todayEvents" (click)="checkIfUserIsAdmin() && openEventDetail(event)">
       <ion-card-header>
         <ion-card-title>{{ event.EventName }}</ion-card-title>
       </ion-card-header>
@@ -61,7 +65,7 @@
     <h3 style="font-family: 'Damili-Semibold'; font-size: 30px; margin-left: 10px;"><strong>THIS MONTH</strong></h3>
   </div>
   <div class="month-div">
-    <ion-card *ngFor="let event of thisMonthEvents" (click)="openEventDetail(event)">
+    <ion-card *ngFor="let event of thisMonthEvents" (click)="checkIfUserIsAdmin() && openEventDetail(event)">
       <ion-card-header>
         <ion-card-title>{{ event.EventName }}</ion-card-title>
       </ion-card-header>

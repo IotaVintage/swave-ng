@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ModalController } from '@ionic/angular';
 import { EventDetailModalComponent } from '../event-detail-modal/event-detail-modal.component';
+import { EventCreationModalComponent } from '../event-creation-modal/event-creation-modal.component';
 
 @Component({
   selector: 'app-highlights',
@@ -12,11 +13,24 @@ export class HighlightsPage implements OnInit {
   currents: any[] = [];  // Stores all events
   todayEvents: any[] = [];  // Stores today's events
   thisMonthEvents: any[] = [];  // Stores this month's events
+  isAdmin: boolean = false;
 
   constructor(
     private http: HttpClient,
     private modalController: ModalController
-  ) { }
+  ) { 
+    this.isAdmin = this.checkIfUserIsAdmin();
+  }
+
+  checkIfUserIsAdmin(): boolean {
+    const role = localStorage.getItem('role');
+
+    if (role === 'admin') {
+      return true;
+    } else {
+      return false
+    }
+  }
 
   ngOnInit() {
     // Fetch events when the component is initialized
@@ -91,4 +105,23 @@ export class HighlightsPage implements OnInit {
 
     await modal.present();
   }
+
+  // highlights.page.ts
+  async openEventCreation() {
+    // Store event in localStorage
+    localStorage.setItem('selectedEvent', JSON.stringify(event));
+
+    const modal = await this.modalController.create({
+      component: EventCreationModalComponent,
+    });
+
+    modal.onDidDismiss().then(() => {
+      // After closing the modal, reload the events (optional)
+      this.loadEvents();
+    });
+
+    await modal.present();
+  }
+
+  
 }
