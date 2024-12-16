@@ -94,6 +94,20 @@ h6 {
   font-size: 14px;
 }
 
+.input-box input:read-only~label {
+  top: 0;
+  color: $dalluyon;
+  font-size: 14px;
+}
+
+.input-box input:not(:read-only):focus~label,
+.input-box input:not(:read-only):valid~label {
+  top: 0;
+  color: $dalluyon;
+  font-size: 14px;
+}
+
+
 
 
 .next{

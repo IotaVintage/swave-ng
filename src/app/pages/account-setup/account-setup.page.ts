@@ -28,6 +28,7 @@ export class AccountSetupPage {
     this.userDetails = JSON.parse(localStorage.getItem('userDetails') || '{}');
   }
 
+
   returnToPrevious() {
     this.location.back();
   }

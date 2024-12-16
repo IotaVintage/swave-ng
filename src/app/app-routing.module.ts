@@ -81,6 +81,14 @@ const routes: Routes = [
     path: 'mapping',
     loadChildren: () => import('./pages/mapping/mapping.module').then( m => m.MappingPageModule)
   },
+  {
+    path: 'admin-college',
+    loadChildren: () => import('./pages/admin-college/admin-college.module').then( m => m.AdminCollegePageModule)
+  },
+  {
+    path: 'normal-college',
+    loadChildren: () => import('./pages/normal-college/normal-college.module').then( m => m.NormalCollegePageModule)
+  },
 
 
 ];
