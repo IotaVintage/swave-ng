@@ -59,13 +59,14 @@ export class LoginPage  {
     if(role != userType) {
       this.presentToast('Account non-existent please check properly the role type or Register!');
     } else {
+      localStorage.setItem('role', userType); // Sets a local storage for role is used to show or hide admin functionalities
       // Redirect based on user type
       if (userType === 'admin') {
         this.presentToast('Login Successfully!');
-        this.router.navigate(['/admin-home']); // Redirect to admin page
+        this.router.navigate(['/home']);
       } else {
         this.presentToast('Login Successfully!');
-        this.router.navigate(['/home']); // Redirect to client page
+        this.router.navigate(['/home']);
       }
     }
   }

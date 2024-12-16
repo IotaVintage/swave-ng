@@ -14,7 +14,12 @@ export class HomePage {
   }
 
   checkIfUserIsAdmin(): boolean {
-    return true;
-  }
+    const role = localStorage.getItem('role');
 
+    if (role === 'admin') {
+      return true;
+    } else {
+      return false
+    }
+  }
 }

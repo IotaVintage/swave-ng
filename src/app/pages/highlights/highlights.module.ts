@@ -8,12 +8,15 @@ import { HighlightsPageRoutingModule } from './highlights-routing.module';
 
 import { HighlightsPage } from './highlights.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HighlightsPageRoutingModule
+    HighlightsPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [HighlightsPage]
 })
