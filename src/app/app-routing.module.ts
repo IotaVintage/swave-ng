@@ -77,6 +77,10 @@ const routes: Routes = [
     path: 'delta',
     loadChildren: () => import('./pages/delta/delta.module').then( m => m.DeltaPageModule)
   },
+  {
+    path: 'mapping',
+    loadChildren: () => import('./pages/mapping/mapping.module').then( m => m.MappingPageModule)
+  },
 
 
 ];
