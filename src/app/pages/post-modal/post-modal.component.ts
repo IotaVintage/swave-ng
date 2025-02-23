@@ -10,7 +10,6 @@ import { HttpClient } from '@angular/common/http';
 export class PostModalComponent {
   postContent: string = '';
   selectedTags: string[] = [];
-  // predefinedTags: string[] = ['Tag1', 'Tag2', 'Tag3', 'Tag4'];
 
   constructor(
     private modalController: ModalController,
@@ -20,13 +19,6 @@ export class PostModalComponent {
   dismiss() {
     this.modalController.dismiss();
   }
-
-  // onFileSelected(event: Event) {
-  //   const fileInput = event.target as HTMLInputElement;
-  //   if (fileInput.files && fileInput.files.length > 0) {
-  //     this.selectedFile = fileInput.files[0];
-  //   }
-  // }
 
   submitPost() {
     const unpID = localStorage.getItem('unpID');
@@ -39,12 +31,7 @@ export class PostModalComponent {
     const formData = new FormData();
     formData.append('unpID', unpID);
     formData.append('caption', this.postContent);
-    
-    // this.selectedTags.forEach(tag => {
-    //   formData.append('tags[]', tag);
-    // });
 
-    // Replace with your API endpoint
     this.http.post('http://localhost:3000/post/create-post', formData)
       .subscribe(response => {
         console.log('Post created successfully:', response);

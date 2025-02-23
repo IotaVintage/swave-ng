@@ -91,11 +91,6 @@ export class AccountSetupPage {
       section: this.section,
     };
 
-    console.log(this.userDetails.unpID + ' ' + this.password + ' ' + this.barangay);
-    console.log(this.cityTown + ' ' + this.province + ' ' + this.contactNumber);
-    console.log(this.birthday + ' ' + this.age + ' ' + this.sex);
-    console.log(this.college + ' ' + this.program + ' ' + this.section);
-
     this.http.post('http://localhost:3000/user/account-setup', data).subscribe(
       () => {
         this.presentToast('Account Registered Successfully!');
